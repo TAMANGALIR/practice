@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="javascript.js"></script>
+</head>
+<style>
+    /* General Styles */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Added for consistency */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1, h2, h3, h5 {
+    margin: 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.icon i {
+    font-size: 1.5rem;
+}
+
+.icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Main Section */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center; /* Center text content */
+}
+
+.men_text h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.men_text h1 span {
+    color: #ff6347;
+}
+
+.main_image img {
+    width: 400px;
+    height: auto;
+}
+
+.main_btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 200px;
+    margin: 200px;
+    padding: 10px;
+    background-color: #fb0202;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.main_btn a {
+    background-color: #fb3613;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#order-btn {
+    margin-right: 10px;
+}
+
+.main_btn a:hover {
+    background-color: #e5533b;
+}
+
+/* Menu Section */
+.menu {
+    padding: 2rem;
+    text-align: center;
+}
+
+.menu h1 {
+    font-size: 2rem;
+}
+
+.menu h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.menu_box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.menu_card {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.menu_card:hover {
+    transform: translateY(-5px);
+}
+
+.menu_card .menu_image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu_card .menu_image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu_card .small_card {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu_card .menu_info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu_card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu_card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.menu_card h3 {
+    color: #ff6347;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.menu_card .menu_btn {
+    display: inline-block;
+    background-color: #ff6347;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu_card .menu_btn:hover {
+    background-color: #e5533b;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer_main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer_tag {
+    flex: 1 1 20%;
+    padding: 0 2rem;
+}
+
+.footer_tag h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer_tag p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer_tag .fa-brands {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer_tag .fa-brands:hover {
+    color: #ff6347;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-close {
+    text-align: right;
+    cursor: pointer;
+}
+
+.sidebar-close i {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.cart {
+    margin-bottom: 2rem;
+}
+
+.cart h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cart-Items {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-Items .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.cart-Items .item:last-child {
+    margin-bottom: 0;
+}
+
+.cart-Items .item .item-name {
+    flex: 1;
+}
+
+.cart-Items .item .item-price {
+    margin-left: 1rem;
+    color: #ff6347;
+}
+
+.total--amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.total--amount h5 {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    color: #ff6347;
+}
+
+.checkout-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #e5533b;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .menu_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu_card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer_main {
+        flex-direction: column;
+    }
+
+    .footer_tag {
+        flex: 1 1 auto;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar {
+    position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 300px; /* Adjust width as needed */
+            background-color: #fff;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000; /* Ensure sidebar appears above other content */
+            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+            overflow-y: auto; /* Enable scrolling if content exceeds height */
+        }
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+
+.sidebar-close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 80px; /* Adjust image width */
+    height: 80px; /* Adjust image height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+</style>
+<body>
+    <div id="homepage">
+        <nav>
+            <div class="logo">
+                <img src="image/KTHFOODHUT.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="" class="nav-link" id="Home">Home</a></li>
+                <li><a href="" class="nav-link" id="About">About</a></li>
+                <li><a href="" class="nav-link" id="Menu">Menu</a></li>
+                <li><a href="" class="nav-link" id="Items">Items</a></li>
+                <li><a href="" class="nav-link" id="Reserve">Reservation</a></li>
+            </ul>
+
+            <div class="icon">
+                <i id="cart-icon" class="fa-solid fa-cart-shopping"></i>
+                <span>0</span>
+            </div>
+
+            
+        </nav>
+
+        <div class="main">
+            <div class="men_text">
+                <h1>Get Fresh<span>Food</span><br>in an Easy Way</h1>
+            </div>
+            <div class="main_image">
+                <img src="image/main_img.png" alt="Main Image">
+            </div>
+        </div>
+
+        <div class="main_btn">
+            <a href="#" id="order-btn">Order Now</a>
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu" id="Menu">
+            <h1>Our<span>Menu</span></h1>
+            <div class="menu_box">
+                <div class="menu_card">
+                    <div class="menu_image">
+                        <img src="image/lasagna.webp" alt="Lasagna">
+                    </div>
+                    <div class="small_card">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="menu_info">
+                        <h2>Lasagna</h2>
+                        <p></p>
+                        <h3>$10.00</h3>
+                        <a href="#" class="menu_btn" data-item="Lasagna" data-price="10.00">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer_main">
+                <div class="footer_tag">
+                    <h2>Location</h2>
+                    <p>Kathmandu</p>
+                    <p>Lalitpur</p>
+                    <p>Bhaktapur</p>
+                </div>
+                <div class="footer_tag">
+                    <h2>Quick Link</h2>
+                    <p>Home</p>
+                    <p>About</p>
+                    <p>Menu</p>
+                    <p>Items</p>
+                    <p>Reservation</p>
+                </div>
+                <div class="footer_tag">
+                    <h2>Contact</h2>
+                    <p>+977 9812345678</p>
+                    <p>+977 9887654321</p>
+                    <p>johndoe123@gmail.com</p>
+                    <p>ktmhut123@gmail.com</p>
+                </div>
+                <div class="footer_tag">
+                    <h2>Our Service</h2>
+                    <p>Fast Delivery</p>
+                    <p>Easy Payments</p>
+                    <p>24 x 7 Service</p>
+                </div>
+                <div class="footer_tag">
+                    <h2>Follows</h2>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </footer>
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-close">
+                <i class="fa-solid fa-close"></i>
+            </div>
+            <div class="cart menu">
+                <h3> My Cart</h3>
+                <div class="cart-Items" id="cart-items"></div>
+            </div>
+            <div class="sidebar--footer">
+                <div class="total--amount">
+                    <h5>Total</h5>
+                    
+                </div>
+                <button class="checkout-btn">CheckOut</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderBtn = document.getElementById('order-btn');
+            const menuButtons = document.querySelectorAll('.menu_btn');
+            const sidebar = document.getElementById('sidebar');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            let total = 0;
+        
+            // Event listener for "Order Now" button on the homepage
+            if (orderBtn) {
+                orderBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = 'menu.html';
+                });
+            }
+        
+            // Function to open the sidebar
+            const openSidebar = () => {
+                sidebar.style.display = 'block';
+            };
+        
+            // Event listener for "Order Now" buttons in the menu
+            menuButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const item = button.getAttribute('data-item');
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    total += price;
+                    const itemElement = document.createElement('div');
+                    itemElement.textContent = `${item} - $${price.toFixed(2)}`;
+                    cartItems.appendChild(itemElement);
+                    cartTotal.textContent = `$${total.toFixed(2)}`;
+                    openSidebar();
+                });
+            });
+        });
+        
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const closeButton = document.querySelector('.sidebar-close i');
+            const sidebar = document.getElementById('sidebar');
+            const orderButtons = document.querySelectorAll('.menu_btn');
+            const cartItems = document.querySelector('.cart-Items');
+            const cartTotal = document.querySelector('.cart-total');
+            const cartIcon = document.getElementById('cart-icon');
+
+            // Close sidebar
+            closeButton.addEventListener('click', () => {
+                sidebar.style.display = 'none';
+            });
+
+            // Open sidebar and add item to cart
+            orderButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const menuCard = button.parentElement.parentElement;
+                    const itemName = menuCard.querySelector('.menu_info h2').textContent;
+                    const itemPrice = menuCard.querySelector('.menu_info h3').textContent;
+                    const itemImageSrc = menuCard.querySelector('.menu_image img').src;
+
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    
+                    const cartItemImage = document.createElement('img');
+                    cartItemImage.src = itemImageSrc;
+                    cartItemImage.alt = itemName;
+                    
+                    const cartItemText = document.createElement('div');
+                    cartItemText.textContent = `${itemName} - ${itemPrice}`;
+
+                    cartItem.appendChild(cartItemImage);
+                    cartItem.appendChild(cartItemText);
+
+                    cartItems.appendChild(cartItem);
+
+                    updateCartTotal();
+
+                    sidebar.style.display = 'block';
+                });
+            });
+
+            // Open sidebar when cart icon is clicked
+            cartIcon.addEventListener('click', () => {
+                sidebar.style.display = 'block';
+            });
+
+            function updateCartTotal() {
+                let total = 0;
+                const items = cartItems.querySelectorAll('.cart-item div');
+                items.forEach(item => {
+                    const price = parseFloat(item.textContent.split('- $')[1]);
+                    total += price;
+                });
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            }
+        });
+
+       
+       document.addEventListener('DOMContentLoaded', () => {
+    const closeButton = document.querySelector('.sidebar-close i');
+    const sidebar = document.getElementById('sidebar');
+    const orderButtons = document.querySelectorAll('.menu_btn');
+    const cartItems = document.querySelector('.cart-Items');
+    const cartTotal = document.querySelector('.cart-total');
+    const cartIcon = document.getElementById('cart-icon');
+    const checkoutButton = document.querySelector('.checkout-btn');
+
+    let itemCount = 0;
+    let totalAmount = 0;
+
+    // Close sidebar
+    closeButton.addEventListener('click', () => {
+        sidebar.style.display = 'none';
+    });
+
+    // Open sidebar when cart icon is clicked
+    cartIcon.addEventListener('click', () => {
+        sidebar.style.display = 'block';
+    });
+
+    // Add item to cart
+    orderButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            const menuCard = button.closest('.menu_card');
+            const itemName = menuCard.querySelector('.menu_info h2').textContent;
+            const itemPrice = parseFloat(menuCard.querySelector('.menu_info h3').textContent.replace('$', ''));
+            const itemImageSrc = menuCard.querySelector('.menu_image img').src;
+
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+
+            const cartItemImage = document.createElement('img');
+            cartItemImage.src = itemImageSrc;
+            cartItemImage.alt = itemName;
+
+            const cartItemText = document.createElement('div');
+            cartItemText.textContent = `${itemName} - $${itemPrice.toFixed(2)}`;
+
+            cartItem.appendChild(cartItemImage);
+            cartItem.appendChild(cartItemText);
+
+            cartItems.appendChild(cartItem);
+
+            itemCount++;
+            totalAmount += itemPrice;
+            updateCartCount();
+            updateCartTotal();
+
+            sidebar.style.display = 'block';
+        });
+    });
+
+    // Checkout button
+    checkoutButton.addEventListener('click', () => {
+        const checkoutList = document.createElement('ul');
+        checkoutList.classList.add('checkout-list');
+
+        const items = cartItems.querySelectorAll('.cart-item');
+        items.forEach(item => {
+            const itemName = item.querySelector('div').textContent.split(' - ')[0];
+            const itemPrice = parseFloat(item.querySelector('div').textContent.split(' - ')[1].replace('$', ''));
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${itemName}: $${itemPrice.toFixed(2)}`;
+            checkoutList.appendChild(listItem);
+        });
+
+        const totalItem = document.createElement('li');
+        totalItem.textContent = `Total: $${totalAmount.toFixed(2)}`;
+        checkoutList.appendChild(totalItem);
+
+        alert('Checkout Details:\n\n' + checkoutList.textContent);
+
+        // Optionally, you can clear the cart after checkout
+        cartItems.innerHTML = '';
+        itemCount = 0;
+        totalAmount = 0;
+        updateCartCount();
+        updateCartTotal();
+    });
+
+    function updateCartCount() {
+        const cartCount = document.querySelector('.icon span');
+        cartCount.textContent = itemCount;
+    }
+
+    function updateCartTotal() {
+        cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.getElementById('cart-icon');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarClose = document.querySelector('.sidebar-close');
+
+            cartIcon.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+
+            // Example: Adding items to the sidebar dynamically
+            const cartItems = [
+                {
+                    name: 'Lasagna',
+                    price: '$10.00',
+                    image: 'image/lasagna.webp'
+                },
+                // Add more items as needed
+            ];
+
+            const cartContainer = document.querySelector('.cart-Items');
+
+            // Function to populate the sidebar with cart items
+            function populateCart() {
+                cartContainer.innerHTML = ''; // Clear existing items
+                cartItems.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.alt = item.name;
+                    image.classList.add('cart-item-image');
+
+                    const details = document.createElement('div');
+                    details.classList.add('cart-item-details');
+
+                    const itemName = document.createElement('h4');
+                    itemName.textContent = item.name;
+
+                    const itemPrice = document.createElement('p');
+                    itemPrice.textContent = item.price;
+
+                    details.appendChild(itemName);
+                    details.appendChild(itemPrice);
+
+                    cartItem.appendChild(image);
+                    cartItem.appendChild(details);
+
+                    cartContainer.appendChild(cartItem);
+                });
+            }
+
+            // Initial population of cart items
+            populateCart();
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.getElementById('cart-icon');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarClose = document.querySelector('.sidebar-close');
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutDetails = document.getElementById('checkout-details');
+            let totalAmount = 0;
+        
+            // Function to add item to cart
+            function addItemToCart(item) {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <p>${item.price}</p>
+                    </div>
+                `;
+                cartItems.appendChild(itemElement);
+                totalAmount += parseFloat(item.price.replace('$', ''));
+                cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
+            }
+        
+            // Example: Adding an item to cart when Order Now is clicked
+            const orderBtn = document.getElementById('order-btn');
+            orderBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                const itemName = 'Lasagna'; // Example item name
+                const itemPrice = '$10.00'; // Example item price
+                const itemImage = 'image/lasagna.webp'; // Example item image
+                const item = { name: itemName, price: itemPrice, image: itemImage };
+                addItemToCart(item);
+                cartIcon.classList.add('active');
+                sidebar.classList.add('active');
+            });
+        
+            // Functionality to close sidebar
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        
+            // Functionality for checkout button
+            checkoutBtn.addEventListener('click', function() {
+                // Clear existing checkout details
+                checkoutDetails.innerHTML = '';
+        
+                // Create checkout details elements
+                const checkoutHeader = document.createElement('h2');
+                checkoutHeader.textContent = 'Checkout Details';
+                checkoutDetails.appendChild(checkoutHeader);
+        
+                // Display each item in cart
+                const cartItems = document.querySelectorAll('.cart-item');
+                cartItems.forEach(item => {
+                    const itemName = item.querySelector('h4').textContent;
+                    const itemPrice = item.querySelector('p').textContent;
+                    const itemDetails = document.createElement('p');
+                    itemDetails.textContent = `${itemName}: ${itemPrice}`;
+                    checkoutDetails.appendChild(itemDetails);
+                });
+        
+                // Display total amount
+                const totalAmountDisplay = document.createElement('p');
+                totalAmountDisplay.textContent = `Total: $${totalAmount.toFixed(2)}`;
+                checkoutDetails.appendChild(totalAmountDisplay);
+        
+                // Show checkout details
+                sidebar.classList.remove('active');
+                checkoutDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.getElementById('cart-icon');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarClose = document.querySelector('.sidebar-close');
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutDetails = document.getElementById('checkout-details');
+            let totalAmount = 0;
+        
+            // Function to add item to cart
+            function addItemToCart(item) {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <p>${item.price}</p>
+                    </div>
+                `;
+                cartItems.appendChild(itemElement);
+                totalAmount += parseFloat(item.price.replace('$', ''));
+                cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
+            }
+        
+            // Example: Adding an item to cart when Order Now is clicked
+            const orderBtn = document.getElementById('order-btn');
+            orderBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                const itemName = 'Lasagna'; // Example item name
+                const itemPrice = '$10.00'; // Example item price
+                const itemImage = 'image/lasagna.webp'; // Example item image
+                const item = { name: itemName, price: itemPrice, image: itemImage };
+                addItemToCart(item);
+                cartIcon.classList.add('active');
+                sidebar.classList.add('active');
+            });
+        
+            // Functionality to close sidebar
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+            });
+        
+            // Functionality for checkout button
+            checkoutBtn.addEventListener('click', function() {
+                // Clear existing checkout details
+                checkoutDetails.innerHTML = '';
+        
+                // Create checkout details elements
+                const checkoutHeader = document.createElement('h2');
+                checkoutHeader.textContent = 'Checkout Details';
+                checkoutDetails.appendChild(checkoutHeader);
+        
+                // Display each item in cart
+                const cartItemsList = cartItems.querySelectorAll('.cart-item');
+                cartItemsList.forEach(cartItem => {
+                    const itemName = cartItem.querySelector('h4').textContent;
+                    const itemPrice = cartItem.querySelector('p').textContent;
+                    const itemDetails = document.createElement('p');
+                    itemDetails.textContent = `${itemName}: ${itemPrice}`;
+                    checkoutDetails.appendChild(itemDetails);
+                });
+        
+                // Display total amount
+                const totalAmountDisplay = document.createElement('p');
+                totalAmountDisplay.textContent = `Total: $${totalAmount.toFixed(2)}`;
+                checkoutDetails.appendChild(totalAmountDisplay);
+        
+                // Show checkout details
+                sidebar.classList.remove('active');
+                checkoutDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        
+    </script>
+</body>
+</html>

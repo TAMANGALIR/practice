@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="javastcipt.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="image/KTHFOODHUT.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html" class="nav-link" id="Home">Home</a></li>
+            <li><a href="About.html" class="nav-link" id="About">About</a></li>
+            <li><a href="menu.html" class="nav-link" id="Menu">Menu</a></li>
+            <li><a href="items.html" class="nav-link" id="Items">Items</a></li>
+            <li><a href="Reservation.html" class="nav-link" id="Reserve">Reservation</a></li>
+        </ul>
+        <div class="icon">
+            <span id="cart-count">0</span>
+            <i id="cart-icon" class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button id="search-btn">Search</button>
+        </div>
+    </nav>
+
+    <div class="menu" id="Menu">
+        <h1>Our<span>Menu</span></h1>
+        <div class="menu_box">
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/buger.jpg" alt="Burger">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Burger</h2>
+                    <h3>$10.00</h3>
+                    <a href="#" class="menu_btn" data-item="Burger" data-price="10.00">Order Now</a>
+                </div>
+            </div>
+            
+            
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/pasta.jpg" alt="Pasta">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Pasta</h2>
+                    <h3>$10.00</h3>
+                    <a href="#" class="menu_btn" data-item="Pasta" data-price="10.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/lasagna.webp" alt="Lasagna">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Lasagna</h2>
+                    <h3>$10.00</h3>
+                    <a href="#" class="menu_btn" data-item="Lasagna" data-price="10.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/chocolate_Drink.jpg" alt="Chocolate Shake">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Chocolate Shake</h2>
+                    <h3>$5.00</h3>
+                    <a href="#" class="menu_btn" data-item="Chocolate Shake" data-price="5.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/chocolate.jpg" alt="Chocolate">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Chocolate</h2>
+                    <h3>$20.00</h3>
+                    <a href="#" class="menu_btn" data-item="Chocolate" data-price="20.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/ice_cream.jpg" alt="Ice Cream">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Ice Cream</h2>
+                    <h3>$20.00</h3>
+                    <a href="#" class="menu_btn" data-item="Ice Cream" data-price="20.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/Spanchi.jpg" alt="Spanchi">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Spanchi</h2>
+                    <h3>$20.00</h3>
+                    <a href="#" class="menu_btn" data-item="Spanchi" data-price="20.00">Order Now</a>
+                </div>
+            </div>
+            
+            <div class="menu_card">
+                <div class="menu_image">
+                    <img src="image/sandwich.jpg" alt="Sandwich">
+                </div>
+                <div class="small_card">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="menu_info">
+                    <h2>Sandwich</h2>
+                    <h3>$20.00</h3>
+                    <a href="#" class="menu_btn" data-item="Sandwich" data-price="20.00">Order Now</a>
+                </div>
+            </div>
+            
+           
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer_main">
+            <div class="footer_tag">
+                <h2>Location</h2>
+                <p>Kathmandu</p>
+                <p>Lalitpur</p>
+                <p>Bhaktapur</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Quick Link</h2>
+                <p>Home</p>
+                <p>About</p>
+                <p>Menu</p>
+                <p>Items</p>
+                <p>Reservation</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Contact</h2>
+                <p>+977 9812345678</p>
+                <p>+977 9887654321</p>
+                <p>johndeo123@gmail.com</p>
+                <p>ktmhut123@gmail.com</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Our Service</h2>
+                <p>Fast Delivery</p>
+                <p>Easy Payments</p>
+                <p>24 x 7 Service</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Follow Us</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-close">
+            <i class="fa-solid fa-close"></i>
+        </div>
+        <div class="cart menu">
+            <h3>My Cart</h3>
+            <div class="cart-Items"></div>
+        </div>
+        <div class="sidebar--footer">
+            <div class="total--amount">
+                <h5>Total</h5>
+                <div class="cart-total">$0.00</div>
+            </div>
+            <button class="checkout-btn">CheckOut</button>
+        </div>
+    </div>
+</body>
+</html>
+
+

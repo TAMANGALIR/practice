@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="javastcipt.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="image/KTHFOODHUT.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html" class="nav-link" id="Home">Home</a></li>
+            <li><a href="About.html" class="nav-link" id="About">About</a></li>
+            <li><a href="menu.html" class="nav-link" id="Menu">Menu</a></li>
+            <li><a href="items.html" class="nav-link" id="Items">Items</a></li>
+            <li><a href="Reservation.html" class="nav-link" id="Reserve">Reservation</a></li>
+        </ul>
+
+        <div class="icon">
+            <i id="cart-icon" class="fa-solid fa-cart-shopping"></i>
+            <span>0</span>
+        </div>
+
+        <div class="search-bar" id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button id="search-btn">Search</button>
+        </div>
+    </nav>
+   
+    <div class="Reserve" id="Reserve">
+        <h1><span>Reserve</span> Now</h1>
+
+        <div class="Reserve_main">
+
+            <div class="Reserve_image">
+                <img src="image/order_image.png" alt="Order Image">
+            </div>
+
+            <form id="reservationForm">
+
+                <div class="input">
+                    <p>Name</p>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+        
+                <div class="input">
+                    <p>Email</p>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+        
+                <div class="input">
+                    <p>Number</p>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+        
+                <div class="input">
+                    <p>How Much</p>
+                    <input type="number" id="amount" placeholder="Enter the amount" required>
+                </div>
+        
+                <div class="input">
+                    <p>Your Order</p>
+                    <input type="text" id="order" placeholder="Enter your order" required>
+                </div>
+        
+                <div class="input">
+                    <p>Address</p>
+                    <input type="text" id="address" placeholder="Enter your address" required>
+                </div>
+        
+                <button type="submit" class="Reserve_btn">Reserve Now</button>
+        
+            </form>
+
+        </div>
+
+    </div>
+
+   >
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Reservation made successfully!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_main">
+            <div class="footer_tag">
+                <h2>Location</h2>
+                <p>Kathmandu</p>
+                <p>Lalitpur</p>
+                <p>Bhaktapur</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Quick Link</h2>
+                <p>Home</p>
+                <p>About</p>
+                <p>Menu</p>
+                <p>Items</p>
+                <p>Reservation</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Contact</h2>
+                <p>+977 9812345678</p>
+                <p>+977 9887654321</p>
+                <p>johndeo123@gmail.com</p>
+                <p>ktmhut123@gmail.com</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Our Service</h2>
+                <p>Fast Delivery</p>
+                <p>Easy Payments</p>
+                <p>24 x 7 Service</p>
+            </div>
+            <div class="footer_tag">
+                <h2>Follows</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-close">
+            <i class="fa-solid fa-close"></i>
+        </div>
+        <div class="cart menu">
+            <h3> My Cart</h3>
+            <div class="cart-Items">Test 1</div>
+        </div>
+        <div class="sidebar--footer">
+            <div class="total--amount">
+                <h5>Total</h5>
+                <div class="cart-total">$0.00</div>
+            </div>
+            <button class="checkout-btn">CheckOut</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>
